@@ -1,5 +1,5 @@
 const path = require("path");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -7,7 +7,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  mode: "production",
   module: {
     rules: [
       /* style and css loader */
@@ -22,26 +21,13 @@ module.exports = {
           },
         ],
       },
-      /* babel loader */
-      {
-        test: /\.js$/,
-        exclude: "/node_modules",
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"],
-            },
-          },
-        ],
-      },
     ],
   },
 
   /* plugin */
   plugins: [
     /* HTML Webpack Plugin */
-    new HTMLWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: "./src/template.html",
       filename: "index.html",
     }),
