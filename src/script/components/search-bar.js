@@ -87,7 +87,7 @@ class SearchBar extends HTMLElement {
       }
     </style>
     <div id="search-container" class="search-container">
-        <input placeholder="Seach characters" id="searchElement" type="search" />
+        <input placeholder="Search characters" id="searchElement" type="search" />
         <button id="searchButtonElement" type="submit">Search</button>
     </div>`;
 
